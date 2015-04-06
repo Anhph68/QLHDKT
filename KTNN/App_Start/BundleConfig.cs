@@ -27,6 +27,15 @@ namespace KTNN
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-cookies.js",
+                "~/Scripts/angular-animate.js",
+                "~/Scripts/angular-sanitize.js",
+                "~/Scripts/i18n/angular-locale_vi-vn.js",
+                "~/Scripts/angular-ui/ui-bootstrap.js",
+                "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"));
         }
     }
 }

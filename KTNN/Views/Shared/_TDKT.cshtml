@@ -1,40 +1,45 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div ng-controller="tdktCtrl">
+    @RenderBody()
+</div>
 
-@RenderBody()
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/apps/tdkt.js")"></script>
+}
 
 @section AppName {
     <span class="navbar-brand">Quản lý Tiến độ kiểm toán</span>
 }
 
 @section SubMenu {
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-paper-plane fa-fw"></i> Kế hoạch kiểm toán <span class="fa fa-caret-down"></span></a>
+    <li dropdown>
+        <a href="#" dropdown-toggle><i class="fa fa-paper-plane fa-fw"></i> Kế hoạch kiểm toán <span class="fa fa-caret-down"></span></a>
         <ul class="dropdown-menu">
             <li><a href="#"><i class="fa fa-pencil-square-o fa-fw"></i> Cập nhật kế hoạch kiểm toán năm</a></li>
         </ul>
     </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar fa-fw"></i> Quản lý tiến độ <span class="fa fa-caret-down"></span></a>
+    <li dropdown>
+        <a href="#" dropdown-toggle><i class="fa fa-calendar fa-fw"></i> Quản lý tiến độ <span class="fa fa-caret-down"></span></a>
         <ul class="dropdown-menu">
-            <li><a href="#"> <i class="fa fa-cubes fa-fw"></i> Tiến độ cuộc kiểm toán tham gia</a></li>
+            <li><a href="#"><i class="fa fa-cubes fa-fw"></i> Tiến độ cuộc kiểm toán tham gia</a></li>
             <li class="divider"></li>
-            <li><a href="#"> <i class="fa fa-cubes fa-fw"></i> Tiến độ các cuộc kiểm toán của đơn vị</a></li>
-            <li><a href="#"> <i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của nhóm đơn vị</a></li>
-            <li><a href="#"> <i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của toàn ngành</a></li>
+            <li><a href="#"><i class="fa fa-cubes fa-fw"></i> Tiến độ các cuộc kiểm toán của đơn vị</a></li>
+            <li><a href="#"><i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của nhóm đơn vị</a></li>
+            <li><a href="#"><i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của toàn ngành</a></li>
             <li class="divider"></li>
-            <li><a href="#"> <i class="fa fa-pencil-square-o fa-fw"></i> Quản trị tiến độ cuộc kiểm toán</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o fa-fw"></i> Quản trị tiến độ cuộc kiểm toán</a></li>
         </ul>
     </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-copy fa-fw"></i> Báo cáo tiến độ <span class="fa fa-caret-down"></span></a>
+    <li dropdown>
+        <a href="#" dropdown-toggle><i class="fa fa-copy fa-fw"></i> Báo cáo tiến độ <span class="fa fa-caret-down"></span></a>
         <ul class="dropdown-menu">
             <li><a href="#"><i class="fa fa-list fa-fw"></i> Danh sách các cuộc kiểm toán</a></li>
             <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> Phụ biểu 01 - Tổng hợp tiến độ kiểm toán</a></li>
-            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> Phụ biểu 02 - Tiến độ thực hiện và phát hành BCKT</a></li>
-            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> Phụ biểu 03 - Đánh giá tiến độ phát hành BCKT</a></li>
+            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> PB01-Tổng hợp tiến độ kiểm toán</a></li>
+            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> PB02-Tiến độ thực hiện và phát hành BCKT</a></li>
+            <li><a href="#"><i class="fa fa-file-excel-o fa-fw"> </i> PB03-Đánh giá tiến độ phát hành BCKT</a></li>
         </ul>
     </li>
 }

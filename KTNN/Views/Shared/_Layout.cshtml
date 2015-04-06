@@ -1,30 +1,31 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="ktnnApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/angularjs")
     <script type="text/javascript" src="@Url.Content("~/Scripts/holder.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/apps/core.js")"></script>
     @RenderSection("scripts", required: false)
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top container-fluid" role="navigation" ng-controller="navCtrl">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="row">
             <div class="navbar-header col-md-9">
-                @RenderSection("AppName", required: true)
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @RenderSection("AppName", required: true)
             </div>
             <div class="col-md-3">
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right dropdown">
+                <div class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'">
+                    <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">
                                 <i class="fa fa-bell"></i>
@@ -32,36 +33,34 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-envelope"></i>
-                                <span class="visible-xs-inline">Tin nhắn</span>
-                            </a>
+                            <a href="#"><i class="fa fa-envelope"></i><span class="visible-xs-inline"> Tin nhắn</span></a>
                         </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li dropdown>
+                            <a href="#" dropdown-toggle>
                                 <i class="fa fa-user fa-fw"></i>
                                 Phạm Hùng Anh
-                                <span class="fa fa-caret-down"></span>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="@Url.Action("Index", "Manage")">
-                                            <div class="text-center">
-                                                <img data-src="holder.js/100x100" class="img-circle" src="~/Icon.png" height="100px" width="100px" style="margin: 10px 0">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
-                                </ul>
+                                <span class="fa fa-caret-down"></span></b>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">
+                                        <div class="text-center">
+                                            <img data-src="holder.js/100x100" class="img-circle" src="~/Icon.png" height="100px" width="100px" style="margin: 10px 0">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#" ng-click="editInfo()"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="navbar-collapse collapse">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="@Url.Action("Index", "Home")"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
@@ -69,7 +68,7 @@
                 @RenderSection("SubMenu", required: false)
             </ul>
             @Html.Partial("_LoginPartial")
-        </div>
+        </div><!-- /.navbar-collapse -->
     </nav>
     <div class="container-fluid body-content content">
         @RenderBody()
