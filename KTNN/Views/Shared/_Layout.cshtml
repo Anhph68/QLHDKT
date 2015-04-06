@@ -8,18 +8,14 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/holder.min.js")"></script>
     @RenderSection("scripts", required: false)
-    <style>
-        .content {
-            margin-top: 100px;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top container-fluid">
         <div class="row">
             <div class="navbar-header col-md-9">
-                @Html.ActionLink("Quản lý hoạt động kiểm toán", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @RenderSection("AppName", required: true)
                 <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -30,7 +26,13 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right dropdown">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="#">
+                                <i class="fa fa-bell"></i>
+                                <span class="visible-xs-inline">Thông báo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <i class="fa fa-envelope"></i>
                                 <span class="visible-xs-inline">Tin nhắn</span>
                             </a>
@@ -39,8 +41,15 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-user fa-fw"></i>
                                 Phạm Hùng Anh
+                                <span class="fa fa-caret-down"></span>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin</a></li>
+                                    <li>
+                                        <div class="text-center">
+                                            <img data-src="holder.js/100x100" class="img-circle" src="~/Icon.png" height="100px" width="100px" style="margin: 10px 0">
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
                                 </ul>
@@ -52,37 +61,10 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
+                <li>
+                    <a href="@Url.Action("Index", "Home")"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-building-o fa-fw"></i> Kế hoạch kiểm toán</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-users fa-fw"></i> Cập nhật kế hoạch kiểm toán năm</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart fa-fw"></i> Quản lý tiến độ</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"> <i class="fa fa-pencil-square-o fa-fw"></i> Cập nhật tiến độ kiểm toán</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"> <i class="fa fa-cubes fa-fw"></i> Tiến độ cuộc kiểm toán tham gia</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"> <i class="fa fa-cubes fa-fw"></i> Tiến độ các cuộc kiểm toán của đơn vị</a></li>
-                        <li><a href="#"> <i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của nhóm đơn vị</a></li>
-                        <li><a href="#"> <i class="fa fa-money fa-fw"></i> Tiến độ các kiểm toán của toàn ngành</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-copy fa-fw"></i> Báo cáo tiến độ</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-shopping-cart fa-fw">   </i> Danh sách các cuộc kiểm toán</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-cog fa-fw"> </i> Phụ biểu 01 - Tổng hợp tiến độ kiểm toán</a></li>
-                        <li><a href="#"><i class="fa fa-list fa-fw"> </i> Phụ biểu 02 - Tiến độ thực hiện và phát hành BCKT</a></li>
-                        <li><a href="#"><i class="fa fa-list fa-fw"> </i> Phụ biểu 03 - Đánh giá tiến độ phát hành BCKT</a></li>
-                    </ul>
-                </li>
+                @RenderSection("SubMenu", required: false)
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

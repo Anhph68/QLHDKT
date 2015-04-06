@@ -1,9 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@section AppName {
+    @Html.ActionLink("Quản lý Hoạt động kiểm toán", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+}
+
 <div class="row">
     <div class="col-md-4">
-        <a href="@Url.Action("Index", "DanhSach")">
+        <a href="@Url.Action("About", "Home")">
             <div class="panel panel-primary">
                 <div class="panel-heading box">
                     <div class="row">
@@ -29,7 +35,7 @@
     <div class="col-md-4">
 
         <div class="panel panel-red">
-            <a href="@Url.Action("Index", "DanhSach")">
+            <a href="@Url.Action("About", "Home")">
                 <div class="panel-heading box">
                     <div class="row">
                         <div class="col-xs-2">
@@ -55,7 +61,7 @@
     </div>
     <div class="col-md-4">
         <div class="panel panel-green">
-            <a href="@Url.Action("Index", "DanhSach")">
+            <a href="@Url.Action("Contact", "Home")">
                 <div class="panel-heading box">
                     <div class="row">
                         <div class="col-xs-2">

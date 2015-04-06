@@ -45,7 +45,7 @@ textarea {
             color: #3d8b3d;
         }
 
-            /*.panel-green a:hover .box {
+/*.panel-green a:hover .box {
                 background-color: #3d8b3d;
             }*/
 
@@ -67,7 +67,7 @@ textarea {
             color: #b52b27;
         }
 
-            /*.panel-red a:hover .box {
+/*.panel-red a:hover .box {
                 background-color: #b52b27;
             }*/
 
@@ -89,7 +89,7 @@ textarea {
             color: #df8a13;
         }
 
-            /*.panel-yellow a:hover .box {
+/*.panel-yellow a:hover .box {
                 background-color: #df8a13;
             }*/
 
@@ -111,7 +111,7 @@ textarea {
             color: #1aacda;
         }
 
-            /*.panel-cygan a:hover .box {
+/*.panel-cygan a:hover .box {
                 background-color: #1aacda;
             }*/
 
@@ -133,7 +133,7 @@ textarea {
             color: #32ac8e;
         }
 
-            /*.panel-darkgreen a:hover .box {
+/*.panel-darkgreen a:hover .box {
                 background-color: #32ac8e;
             }*/
 
@@ -143,4 +143,24 @@ textarea {
 
 .icon-panel {
     padding: 45px 20px;
+}
+
+.content {
+    padding-top: 80px;
+}
+
+@media screen and (max-width: 720px) {
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .content {
+        padding-top: 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navbar-brand {
+        font-size: 15px;
+    }
 }
