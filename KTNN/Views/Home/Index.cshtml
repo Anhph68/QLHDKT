@@ -4,12 +4,12 @@
 }
 
 @section AppName {
-    @Html.ActionLink("Quản lý Hoạt động kiểm toán", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <span class="navbar-brand">Quản lý Hoạt động kiểm toán</span>
 }
 
 <div class="row">
     <div class="col-md-4">
-        <a href="@Url.Action("About", "Home")">
+        <a href="@Url.Action("Index", "TDKT")">
             <div class="panel panel-primary">
                 <div class="panel-heading box">
                     <div class="row">
@@ -35,7 +35,7 @@
     <div class="col-md-4">
 
         <div class="panel panel-red">
-            <a href="@Url.Action("About", "Home")">
+            <a href="@Url.Action("Index", "NKKT")">
                 <div class="panel-heading box">
                     <div class="row">
                         <div class="col-xs-2">
@@ -43,9 +43,9 @@
                         </div>
                         <div class="col-xs-10 text-right">
                             <h1>Nhật ký</h1>
-                            <div class="text-right">asdasdasdassd</div>
-                            <div class="text-right">asdasdasdassd</div>
-                            <div class="text-right">asdasdasdassd</div>
+                            <div class="text-right">Nhật ký kiểm toán</div>
+                            <div class="text-right">Nhật ký công tác</div>
+                            <div class="text-right">Kiểm tra thông tin NKKT</div>
                             <div class="text-right">...</div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
     </div>
     <div class="col-md-4">
         <div class="panel panel-green">
-            <a href="@Url.Action("Contact", "Home")">
+            <a href="@Url.Action("Index", "THKQKT")">
                 <div class="panel-heading box">
                     <div class="row">
                         <div class="col-xs-2">
