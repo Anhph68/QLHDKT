@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr", "~/bundles/angularjs")
+    @Styles.Render("~/Content/css", "~/Content/angular-extra")
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/angularjs", "~/bundles/ui-bootstrap", "~/bundles/angular-strap")
     <script type="text/javascript" src="@Url.Content("~/Scripts/holder.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/apps/core.js")"></script>
     @RenderSection("scripts", required: false)
@@ -50,7 +50,7 @@
                                     </a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="#" ng-click="editInfo()"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
+                                <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
                             </ul>
