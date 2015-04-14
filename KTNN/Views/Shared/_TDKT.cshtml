@@ -7,13 +7,14 @@
 
 @section Scripts {
     <script type="text/javascript" src="@Url.Content("~/Scripts/apps/tdkt.js")"></script>
+    @RenderSection("scripts", required: false)
 }
 
 @section AppName {
     <span class="navbar-brand">Quản lý Tiến độ kiểm toán</span>
 }
 
-@section SubMenu {
+@section Menu {
     <li dropdown>
         <a href="#" dropdown-toggle><i class="fa fa-paper-plane fa-fw"></i> Kế hoạch kiểm toán <span class="fa fa-caret-down"></span></a>
         <ul class="dropdown-menu">

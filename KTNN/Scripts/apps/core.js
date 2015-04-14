@@ -1,31 +1,29 @@
-﻿var app = angular.module("ktnnApp", ['ui.bootstrap', 'ngSanitize', 'ngAnimate', 'mgcrea.ngStrap']);
-
-app.controller("navCtrl", function ($scope, $modal) {
-
-});
-
+﻿var app = angular.module("ktnnApp", ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'mgcrea.ngStrap']);
+'use strict'
 app.config(function ($modalProvider) {
     angular.extend($modalProvider.defaults, {
         animation: 'am-fade',
-        html: true
+        html: true,
+        container: 'body'
     });
+})
+app.controller("navCtrl", function ($scope) {
 });
-app.controller('modalCtrl', function ($scope, $modal) {
-    // Controller usage example
-    var myModal = $modal({ title: 'Title', content: 'Hello Modal<br />This is a multiline message!', show: true });
+app.controller('infoModalCtrl', function ($scope, $modal) {
+    $scope.modal = { title: "Thay đổi thông tin tài khoản" };
     $scope.showModal = function () {
         myModal.$promise.then(myModal.show);
     };
     $scope.hideModal = function () {
         myModal.$promise.then(myModal.hide);
     };
-
-    // Show a basic modal from a controller
-    //var myModal = $modal({ title: 'My Title', content: 'My Content', show: true });
-    // Pre-fetch an external template populated with a custom scope
-    //var myOtherModal = $modal({ scope: $scope, template: 'modal/docs/modal.tpl.demo.html', show: false });
-    // Show when some event occurs (use $promise property to ensure the template has been loaded)
-    //$scope.showModal = function () {
-    //    myOtherModal.$promise.then(myOtherModal.show);
-    //};
+});
+app.controller('passwordModalCtrl', function ($scope, $modal) {
+    $scope.modal = { title: "Thay đổi mật khẩu" };
+    $scope.showModal = function () {
+        myModal.$promise.then(myModal.show);
+    };
+    $scope.hideModal = function () {
+        myModal.$promise.then(myModal.hide);
+    };
 });

@@ -335,7 +335,8 @@
     <Content Include="Views\TDKT\Index.cshtml" />
     <Content Include="Views\THKQKT\Index.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Home\ModalInfo.cshtml" />
+    <Content Include="Views\Home\infoModal.cshtml" />
+    <Content Include="Views\Home\passwordModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

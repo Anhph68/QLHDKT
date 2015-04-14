@@ -13,7 +13,12 @@ namespace KTNN.Controllers
             return View();
         }
 
-        public ActionResult ModalInfo()
+        public ActionResult infoModal()
+        {
+            return PartialView();
+        }
+
+        public ActionResult passwordModal()
         {
             return PartialView();
         }

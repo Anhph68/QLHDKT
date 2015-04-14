@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css", "~/Content/angular-extra")
-    @Scripts.Render("~/bundles/modernizr", "~/bundles/angularjs", "~/bundles/ui-bootstrap", "~/bundles/angular-strap")
+    @Scripts.Render("~/bundles/modernizr", "~/bundles/jquery", "~/bundles/angularjs", "~/bundles/ui-bootstrap", "~/bundles/angular-strap")
     <script type="text/javascript" src="@Url.Content("~/Scripts/holder.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/apps/core.js")"></script>
     @RenderSection("scripts", required: false)
@@ -50,9 +50,9 @@
                                     </a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
+                                <li ng-controller="infoModalCtrl"><a href="#" data-animation="am-fade-and-slide-top" data-template="@Url.Action("infoModal", "Home")" bs-modal="modal"><i class="fa fa-pencil fa-fw"></i> Thay đổi thông tin tài khoản</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
+                                <li ng-controller="passwordModalCtrl"><a href="#" data-animation="am-fade-and-slide-top" data-template="@Url.Action("passwordModal", "Home")" bs-modal="modal"><i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@
                 <li>
                     <a href="@Url.Action("Index", "Home")"><i class="fa fa-home fa-fw"></i> Trang chủ</a>
                 </li>
-                @RenderSection("SubMenu", required: false)
+                @RenderSection("Menu", required: false)
             </ul>
             @Html.Partial("_LoginPartial")
         </div><!-- /.navbar-collapse -->
