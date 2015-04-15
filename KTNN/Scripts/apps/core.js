@@ -10,7 +10,7 @@ app.config(function ($modalProvider) {
 app.controller("navCtrl", function ($scope) {
 });
 app.controller('infoModalCtrl', function ($scope, $modal) {
-    $scope.modal = { title: "Thay đổi thông tin tài khoản" };
+    $scope.modal = { title: '<i class="fa fa-user fa-fw"></i> Thay đổi thông tin tài khoản' };
     $scope.showModal = function () {
         myModal.$promise.then(myModal.show);
     };
@@ -19,7 +19,7 @@ app.controller('infoModalCtrl', function ($scope, $modal) {
     };
 });
 app.controller('passwordModalCtrl', function ($scope, $modal) {
-    $scope.modal = { title: "Thay đổi mật khẩu" };
+    $scope.modal = { title: '<i class="fa fa-key fa-fw"></i> Thay đổi mật khẩu' };
     $scope.showModal = function () {
         myModal.$promise.then(myModal.show);
     };

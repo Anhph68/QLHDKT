@@ -7,6 +7,7 @@
 })
 
 app.controller('tdktCtrl', function ($scope) {
+    $scope.followDate = new Date();
 });
 
 app.controller('modalCtrl', function ($scope, $modal) {

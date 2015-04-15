@@ -142,11 +142,11 @@ textarea {
 }
 
 .icon-panel {
-    padding: 45px 20px;
+    padding: 40px 0;
 }
 
 .content {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 @media screen and (max-width: 720px) {
@@ -163,4 +163,8 @@ textarea {
     .navbar-brand {
         font-size: 15px;
     }
+}
+
+.date {
+    width: 150px;
 }
